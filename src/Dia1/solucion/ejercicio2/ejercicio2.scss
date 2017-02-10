@@ -1,0 +1,49 @@
+$menu-height: 50px;
+
+.menu {
+  @include absolute(0, 0, auto, 0);
+  height: $menu-height;
+
+  .logged-user {
+    padding: 20px;
+
+    .avatar {
+      display: block;
+      width: 100px;
+
+      i {
+        color: #888;
+        line-height: 100px;
+      }
+    }
+
+    .controls {
+      @include absolute(auto, 0, 0, 0);
+      height: 20px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    height: 100%;
+
+    li {
+      position: relative;
+      line-height: $menu-height;
+
+      &.current {
+        background: silver;
+      }
+
+      &:first-child {
+        border-top: 1px solid silver;
+      }
+
+      i {
+        line-height: $menu-height;
+        font-size: 14pt;
+      }
+    }
+  }
+}

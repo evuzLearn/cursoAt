@@ -1,0 +1,40 @@
+{
+  "name": "CursoHybreed",
+  "version": "1.0.0",
+  "description": "Curso de Hybreed",
+  "private": true,
+  "scripts": {
+    "develop": "gulp develop"
+  },
+  "author": "atSistemas",
+  "license": "MIT",
+  "dependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "backbone": "^1.3.3",
+    "backbone.marionette": "^3.1.0",
+    "browser-sync": "^2.18.6",
+    "browserify": "^13.3.0",
+    "del": "^2.2.2",
+    "fastclick": "^1.0.6",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-json-srv": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
+    "iscroll": "^5.2.0",
+    "jquery": "^3.1.1",
+    "run-sequence": "^1.2.2",
+    "spin": "0.0.1",
+    "stringify": "^5.1.0",
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.8.0"
+  }
+}

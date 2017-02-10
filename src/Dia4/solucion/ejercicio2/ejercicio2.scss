@@ -1,0 +1,68 @@
+.layout-view {
+  @include absolute(0, 0, 0, 0);
+
+  .left {
+    @include absolute(0, auto, 0, 0);
+    width: 50%;
+    border-right: 1px solid gray;
+  }
+
+  .right {
+    @include absolute(0, 0, 0, auto);
+    width: 50%;
+  }
+
+  @media(orientation: portrait) {
+
+    .left,
+    .right {
+      @include absolute(0, 0, 0, 0);
+      width: 100%;
+      background: white;
+    }
+
+    .portrait-hidden {
+      display: none;
+    }
+  }
+}
+
+.books-collection-view {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: auto;
+
+  .book-child-view {
+    padding: 15px;
+    border-bottom: 1px solid silver;
+
+    @media(orientation: landscape) {
+      &.current {
+        background: #EEE;
+      }
+    }
+
+    .language {
+      font-size: 10pt;
+    }
+  }
+}
+
+.book-detail-view {
+  padding: 0 20px;
+
+  label {
+    display: inline-block;
+    width: 100px;
+  }
+
+  .go-back {
+    margin: 20px;
+
+    @media(orientation: landscape) {
+      display: none;
+    }
+  }
+}

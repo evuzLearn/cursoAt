@@ -1,0 +1,55 @@
+/*
+ * SASS
+ */
+
+//1. Transpilación: http://www.sassmeister.com/
+//2. Variables
+//3. Anidamiento
+//4. Comentarios
+//5. Mixins
+//6. Importaciones
+//7. Operadores aritméticos
+
+.container {
+  display: block;
+  width: 500px;
+  height: 100%;
+}
+
+.container .avatar {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.container .details {
+  padding: 5px;
+}
+
+.container .details > .detail-line {
+  width: 100px;
+}
+
+.container .details > .detail-line:first-child {
+  background: red;
+}
+
+.container .details > .detail-line .label {
+  width: 30px;
+}
+
+.container .details > .detail-line .value {
+   width: 70px;
+ }
+
+.container .details > .detail-line .value.fine {
+  color: green;
+}
+
+.container .details > .detail-line .value.warn {
+  color: orange;
+}
+
+.container .details > .detail-line .value.danger {
+  color: red;
+}

@@ -1,0 +1,25 @@
+@mixin absolute($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+body, #main {
+  font-family: sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+fieldset {
+  border: 0;
+}
