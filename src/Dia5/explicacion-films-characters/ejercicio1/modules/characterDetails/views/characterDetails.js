@@ -5,7 +5,7 @@ const CharacterDetailsView = Marionette.View.extend({
     className: 'character-details-view',
     triggers: {
         'click .back-button': 'onBack',
-        'click': 'onClick'
+        'click .list-button': 'onClick'
     }
 });
 
