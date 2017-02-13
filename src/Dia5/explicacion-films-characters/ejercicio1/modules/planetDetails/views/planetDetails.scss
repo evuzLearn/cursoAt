@@ -1,0 +1,30 @@
+.planet-details-view {
+    .content {
+        top: 0;
+
+        .label {
+            height: 50px;
+            margin: 0;
+            padding: 15px 0 0 30px;
+            font-size: 15px;
+        }
+
+        .list-button {
+            margin: 0 0 0 30px;
+        }
+
+        @media (orientation:landscape) {
+            .list-button {
+                display: none;
+            }
+        }
+    }
+
+    .header {
+        @media(orientation:landscape) {
+            &.hide-landscape {
+                display: none;
+            }
+        }
+    }
+}

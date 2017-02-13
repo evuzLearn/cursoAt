@@ -28,4 +28,11 @@ $header-size: 50px;
 
 .content {
   @include absolute($header-size, 0, 0, 0);
+
+  @media(orientation: landscape) {
+      .selected {
+        background: #286090;
+        color: white;
+      }
+    }
 }

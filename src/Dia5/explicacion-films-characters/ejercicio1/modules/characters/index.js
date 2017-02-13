@@ -1,4 +1,5 @@
-import CharactersView from './views/characters';
+import { DoubleLayoutView } from '../layouts';
+import Main from '../main';
 import CharactersCollectionView from './views/charactersCollection';
 
 let charactersView = null;
@@ -19,13 +20,15 @@ function show() {
 }
 
 function showCharactersView() {
-    charactersView = new CharactersView();
-
-    charactersView.on('onBack', () => {
+    charactersView = new DoubleLayoutView({
+        primaryTitle: 'Characters'
+    });
+    charactersView.on('primaryBack', () => {
         Broker.channel('dashboard').request('show');
     });
 
-    Broker.channel('main').request('showView', charactersView);
+    Main.showView(charactersView);
+    // Broker.channel('main').request('showView', charactersView);
 }
 
 function showCharactersCollectionView(collection) {
@@ -37,24 +40,17 @@ function showCharactersCollectionView(collection) {
 
         let characterDetailsView = Broker.channel('characterDetails').request('get', view.model);
 
-        characterDetailsView.on('onClick', () => {
-            charactersView.hideDetails();
-        })
-        // charactersView.off('onBack');
-        // charactersView.on('onBack', () => {
-        //     charactersView.hideDetails();
-
-        //     charactersView.off('onBack');
-        //     charactersView.on('onBack', () => {
-        //         Broker.channel('dashboard').request('show');
-        //     });
-        // });
-
-        charactersView.showChildView('details', characterDetailsView);
-        charactersView.showDetails();
+        charactersView.on('secondaryBack', () => {
+            charactersView.hideContentRight();
+            charactersView.hideTitleSecondary();
+        });
+        charactersView.setSecondaryTitle(characterDetailsView.model.attributes.name);
+        charactersView.showChildView('right', characterDetailsView);
+        charactersView.showContentRight();
+        charactersView.showTitleSecondary();
     })
 
-    charactersView.showChildView('list', charactersCollectionView);
+    charactersView.showChildView('left', charactersCollectionView);
 }
 
 //

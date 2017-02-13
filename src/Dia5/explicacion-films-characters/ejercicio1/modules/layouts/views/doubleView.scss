@@ -1,0 +1,52 @@
+.double-layout-view {
+    @media(orientation: landscape) {
+        .landscape-hide {
+            display: none;
+        }
+    }
+    @media(orientation: portrait) {
+        .portrait-hide {
+            display: none;
+        }
+    }
+    .content {
+        .left {
+            background: white;
+            @media(orientation: landscape) {
+                @include absolute(0, 50%, 0, 0);
+            }
+            
+            @media(orientation: portrait) {
+                @include absolute(0, 0, 0, 0);
+            }
+        }
+
+        .right {
+            background: #f7f7f7;
+            @media(orientation: landscape) {
+                @include absolute(0, 0, 0, 50%);
+            }
+            
+            @media(orientation: portrait) {
+                @include absolute(0, 0, 0, 0);
+            }
+        }
+    }
+}
+
+.characters-collection-view {
+
+  .characters-child-view {
+    padding: 15px;
+    border-bottom: 1px solid silver;
+  }
+}
+
+
+.planets-collection-view {
+
+  .planets-child-view {
+    padding: 15px;
+    border-bottom: 1px solid silver;
+  }
+}
