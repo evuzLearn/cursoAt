@@ -1,0 +1,31 @@
+<div class="header">
+    <div class="back-button fa fa-chevron-left"></div>
+    <div class="title">
+        <%= title %>
+    </div>
+</div>
+<div class="content">
+    <div class="problem">
+        <p class="title">
+            <%= title %>
+        </p>
+        <p class="author">
+            <%= author %>
+        </p>
+        <p class="date">
+            <%= formatDate(date) %>
+        </p>
+        <div class="fa fa-check-circle solve <%= isSolved(solved) %>"></div>
+        <p class="description">
+            <%= content %>
+        </p>
+        <div class="separator"></div>
+    </div>
+    <div class="comments">
+
+    </div>
+    <div class="new-comment">
+        <textarea type="text" placeholder="Write your comment.." id="new-comment" rows="2"></textarea>
+        <button class="publish">Publish</button>
+    </div>
+</div>

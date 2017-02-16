@@ -1,0 +1,47 @@
+.layout-view {
+    .header-layout {
+        @media(orientation: portrait) {
+            display: none
+        }
+
+        @media(orientation: landscape) {
+
+        }
+    }
+
+    .content-layout {
+        @media(orientation: portrait) {
+            @include absolute(0, 0, 0, 0);
+            .portrait-hide {
+                display: none;
+            }
+        }
+
+        @media(orientation: landscape) {
+            @include absolute($header-size, 0, 0, 0);
+            .landscape-hide {
+                display: none;
+            }
+        }
+        .left {
+            @media(orientation: portrait) {
+                @include absolute(0, 0, 0, 0);
+            }
+
+            @media(orientation: landscape) {
+                @include absolute(0, 50%, 0, 0);
+                border-right: 2px solid black;
+            }
+        }
+
+        .right {
+            @media(orientation: portrait) {
+                @include absolute(0, 0, 0, 0);
+            }
+
+            @media(orientation: landscape) {
+                @include absolute(0, 0, 0, 50%);
+            }
+        }
+    }
+}

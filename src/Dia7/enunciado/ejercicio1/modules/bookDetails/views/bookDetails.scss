@@ -1,0 +1,30 @@
+.book-details-view {
+    .content {
+        padding: 25px;
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            width: 100px;
+        }
+
+        input {
+            width: 50%;
+            min-width: 200px;
+        }
+        
+        .detail {
+            margin-top: 15px;
+        }
+
+        button {
+            margin-top: 20px;
+            height: 40px;
+            width: 80px;
+            background: cornflowerblue;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}

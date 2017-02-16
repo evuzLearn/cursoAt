@@ -1,0 +1,15 @@
+.planets-view {
+
+  .list {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.planets-collection-view {
+
+  .planets-child-view {
+    padding: 15px;
+    border-bottom: 1px solid silver;
+  }
+}

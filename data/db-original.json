@@ -1,242 +1,158 @@
 {
-  "books": [
+  "problems": [
     {
       "id": 1,
-      "title": "Head First Java",
-      "language": "Java",
-      "edition": "third",
-      "publisher": "O'Reilly"
+      "title": "Mi ordenador no se enciende",
+      "content": "Después de estar usando el ordenador durante 3 horas, se apagó de repente y no ha vuelto a encender.",
+      "author": "Manuel",
+      "date": 1443661200000,
+      "solved": false
     },
     {
       "id": 2,
-      "title": "Head First Design Pattern",
-      "language": "Java",
-      "edition": "second",
-      "publisher": "O'Reilly"
+      "title": "No tengo conexión a internet",
+      "content": "Ayer funcionaba perfectamente, pero hoy he intentado conectarme y no hay manera. El icono del estado de red sale con una admiración.",
+      "author": "Arturo",
+      "date": 1443751200000,
+      "solved": true
     },
     {
       "id": 3,
-      "title": "Effective Java",
-      "language": "Java",
-      "edition": "third",
-      "publisher": "Sun Microsystems"
+      "title": "Olvidé la clave de mi correo",
+      "content": "Desde hace mucho tiempo en mi navegador recordaba mi clave para acceder al correo. Pero ahora que uso otro navegador necesito introducirla y me he dado cuenta de que la olvidé.",
+      "author": "Silvia",
+      "date": 1443841200000,
+      "solved": false
     },
     {
       "id": 4,
-      "title": "Concurrency Practice in Java",
-      "language": "Java",
-      "edition": "first",
-      "publisher": "Sun Microsystems"
+      "title": "La pantalla se ve muy azul",
+      "content": "De repente mi monitor emite una imagen muy azul, es bastante desagradable trabajar así.",
+      "author": "Francisco",
+      "date": 1443931200000,
+      "solved": true
     },
     {
       "id": 5,
-      "title": "Java Generics and Collections",
-      "language": "Java",
-      "edition": "third",
-      "publisher": "O'Reilly"
+      "title": "El ordenador se reinicia solo",
+      "content": "Muchas veces estoy trabajando y el ventilador del ordenador empieza a hacer mucho ruído hasta que llega un momento en que se reinicia.",
+      "author": "Marta",
+      "date": 1444021200000,
+      "solved": false
     },
     {
       "id": 6,
-      "title": "Eloquent JavaScript",
-      "language": "Javascript",
-      "edition": "third",
-      "publisher": "Marijn Haverbecke"
+      "title": "Los juegos van muy lentos",
+      "content": "Estoy tratando de jugar al GTA V en mi ordenador y va a tirones ¿qué puedo hacer para solucionarlo?",
+      "author": "Mariano",
+      "date": 1444111200000,
+      "solved": false
     },
     {
       "id": 7,
-      "title": "The Book of JavaScript",
-      "language": "Javascript",
-      "edition": "second",
-      "publisher": "Dave Thau"
+      "title": "Creo que me roban el WiFi",
+      "content": "Por la noche el internet va bastante lento y me parece muy sospechoso ver parpadear las luces del router más que nunca en todo el día, ¿es posible que conozcan mi clave de WiFi?",
+      "author": "Sonia",
+      "date": 1444201200000,
+      "solved": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "content": "¿Has probado a cambiarle el adaptador de corriente?",
+      "author": "Jose",
+      "problemId": 1
+    },
+    {
+      "id": 2,
+      "content": "No. No tengo ningún otro de repuesto.",
+      "author": "Manuel",
+      "problemId": 1
+    },
+    {
+      "id": 3,
+      "content": "Está bien. Te facilitaremos uno.",
+      "author": "Jose",
+      "problemId": 1
+    },
+    {
+      "id": 4,
+      "content": "¿Has probado a apagar y encender el router?",
+      "author": "Cristina",
+      "problemId": 2
+    },
+    {
+      "id": 5,
+      "content": "Sí, y sigue sin funcionar. Según veo, parpadea una luz que pone DSL",
+      "author": "Arturo",
+      "problemId": 2
+    },
+    {
+      "id": 6,
+      "content": "Asegúrese de que los teléfonos de la casa están conectados con su correspondiente microfiltro.",
+      "author": "Cristina",
+      "problemId": 2
+    },
+    {
+      "id": 7,
+      "content": "Efectivamente, ese es el problema. Instalé un teléfono nuevo en la casa y olvidé ponérselo. Ya está solucionado. Gracias.",
+      "author": "Arturo",
+      "problemId": 2
     },
     {
       "id": 8,
-      "title": "JavaScript, The Definitive Guide",
-      "language": "Javascript",
-      "edition": "third",
-      "publisher": "O'Reilly"
+      "content": "Me alegra haberle ayudado a resolver su problema.",
+      "author": "Cristina",
+      "problemId": 2
     },
     {
       "id": 9,
-      "title": "Effective JavaScript",
-      "language": "JavaScript",
-      "edition": "third",
-      "publisher": "O'Reilly"
+      "content": "¿De qué cuenta de correo se trata?",
+      "author": "Luis",
+      "problemId": 3
     },
     {
       "id": 10,
-      "title": "C++ Primer",
-      "language": "C++",
-      "edition": "third",
-      "publisher": "Amazon"
+      "content": "Es posible que el conector ande un poco suelto, comprueba que está bien conectado.",
+      "author": "Jose",
+      "problemId": 4
     },
     {
       "id": 11,
-      "title": "Thinking in C++",
-      "language": "C++",
-      "edition": "third",
-      "publisher": "Amazon"
-    }
-  ],
-
-  "languages": [
-    {
-      "id": 1,
-      "language": "Java"
+      "content": "Sí que está bien conectado, acabo de comprobarlo.",
+      "author": "Francisco",
+      "problemId": 4
     },
     {
-      "id": 2,
-      "language": "Javascript"
+      "id": 12,
+      "content": "Quizá el cable esté deteriorado, ¿podrías probar con otro cable?",
+      "author": "Jose",
+      "problemId": 4
     },
     {
-      "id": 3,
-      "language": "C++"
-    }
-  ],
-
-  "films": [
-    {
-      "id": 1,
-      "title": "A New Hope",
-      "episode_id": 4,
-      "opening_crawl": "It is a period of civil war.\r\nRebel spaceships, striking\r\nfrom a hidden base, have won\r\ntheir first victory against\r\nthe evil Galactic Empire.\r\n\r\nDuring the battle, Rebel\r\nspies managed to steal secret\r\nplans to the Empire's\r\nultimate weapon, the DEATH\r\nSTAR, an armored space\r\nstation with enough power\r\nto destroy an entire planet.\r\n\r\nPursued by the Empire's\r\nsinister agents, Princess\r\nLeia races home aboard her\r\nstarship, custodian of the\r\nstolen plans that can save her\r\npeople and restore\r\nfreedom to the galaxy...."
+      "id": 13,
+      "content": "El único cable que tengo de este estilo tiene clavija de enchufe inglés.",
+      "author": "Francisco",
+      "problemId": 4
     },
     {
-      "id": 2,
-      "title": "Attack of the Clones",
-      "episode_id": 2,
-      "opening_crawl": "There is unrest in the Galactic\r\nSenate. Several thousand solar\r\nsystems have declared their\r\nintentions to leave the Republic.\r\n\r\nThis separatist movement,\r\nunder the leadership of the\r\nmysterious Count Dooku, has\r\nmade it difficult for the limited\r\nnumber of Jedi Knights to maintain \r\npeace and order in the galaxy.\r\n\r\nSenator Amidala, the former\r\nQueen of Naboo, is returning\r\nto the Galactic Senate to vote\r\non the critical issue of creating\r\nan ARMY OF THE REPUBLIC\r\nto assist the overwhelmed\r\nJedi...."
+      "id": 14,
+      "content": "No no, quiero decir del cable con el que se conecta al ordenador.",
+      "author": "Jose",
+      "problemId": 4
     },
     {
-      "id": 3,
-      "title": "The Phantom Menace",
-      "episode_id": 1,
-      "opening_crawl": "Turmoil has engulfed the\r\nGalactic Republic. The taxation\r\nof trade routes to outlying star\r\nsystems is in dispute.\r\n\r\nHoping to resolve the matter\r\nwith a blockade of deadly\r\nbattleships, the greedy Trade\r\nFederation has stopped all\r\nshipping to the small planet\r\nof Naboo.\r\n\r\nWhile the Congress of the\r\nRepublic endlessly debates\r\nthis alarming chain of events,\r\nthe Supreme Chancellor has\r\nsecretly dispatched two Jedi\r\nKnights, the guardians of\r\npeace and justice in the\r\ngalaxy, to settle the conflict...."
+      "id": 15,
+      "content": "Ah vale. Efectivamente, era un problema del cable ¡muchas gracias por tu ayuda!",
+      "author": "Francisco",
+      "problemId": 4
     },
     {
-      "id": 4,
-      "title": "Revenge of the Sith",
-      "episode_id": 3,
-      "opening_crawl": "War! The Republic is crumbling\r\nunder attacks by the ruthless\r\nSith Lord, Count Dooku.\r\nThere are heroes on both sides.\r\nEvil is everywhere.\r\n\r\nIn a stunning move, the\r\nfiendish droid leader, General\r\nGrievous, has swept into the\r\nRepublic capital and kidnapped\r\nChancellor Palpatine, leader of\r\nthe Galactic Senate.\r\n\r\nAs the Separatist Droid Army\r\nattempts to flee the besieged\r\ncapital with their valuable\r\nhostage, two Jedi Knights lead a\r\ndesperate mission to rescue the\r\ncaptive Chancellor...."
-    },
-    {
-      "id": 5,
-      "title": "Return of the Jedi",
-      "episode_id": 6,
-      "opening_crawl": "Luke Skywalker has returned to\r\nhis home planet of Tatooine in\r\nan attempt to rescue his\r\nfriend Han Solo from the\r\nclutches of the vile gangster\r\nJabba the Hutt.\r\n\r\nLittle does Luke know that the\r\nGALACTIC EMPIRE has secretly\r\nbegun construction on a new\r\narmored space station even\r\nmore powerful than the first\r\ndreaded Death Star.\r\n\r\nWhen completed, this ultimate\r\nweapon will spell certain doom\r\nfor the small band of rebels\r\nstruggling to restore freedom\r\nto the galaxy..."
-    },
-    {
-      "id": 6,
-      "title": "The Empire Strikes Back",
-      "episode_id": 5,
-      "opening_crawl": "It is a dark time for the\r\nRebellion. Although the Death\r\nStar has been destroyed,\r\nImperial troops have driven the\r\nRebel forces from their hidden\r\nbase and pursued them across\r\nthe galaxy.\r\n\r\nEvading the dreaded Imperial\r\nStarfleet, a group of freedom\r\nfighters led by Luke Skywalker\r\nhas established a new secret\r\nbase on the remote ice world\r\nof Hoth.\r\n\r\nThe evil lord Darth Vader,\r\nobsessed with finding young\r\nSkywalker, has dispatched\r\nthousands of remote probes into\r\nthe far reaches of space...."
-    },
-    {
-      "id": 7,
-      "title": "The Force Awakens",
-      "episode_id": 7,
-      "opening_crawl": "Luke Skywalker has vanished.\r\nIn his absence, the sinister\r\nFIRST ORDER has risen from\r\nthe ashes of the Empire\r\nand will not rest until\r\nSkywalker, the last Jedi,\r\nhas been destroyed.\r\n \r\nWith the support of the\r\nREPUBLIC, General Leia Organa\r\nleads a brave RESISTANCE.\r\nShe is desperate to find her\r\nbrother Luke and gain his\r\nhelp in restoring peace and\r\njustice to the galaxy.\r\n \r\nLeia has sent her most daring\r\npilot on a secret mission\r\nto Jakku, where an old ally\r\nhas discovered a clue to\r\nLuke's whereabouts...."
-    }
-  ],
-
-  "people": [
-    {
-      "id": 1,
-      "name": "Luke Skywalker",
-      "height": "172",
-      "mass": "77",
-      "hair_color": "blond",
-      "skin_color": "fair",
-      "eye_color": "blue",
-      "birth_year": "19BBY",
-      "gender": "male"
-    },
-    {
-      "id": 2,
-      "name": "C-3PO",
-      "height": "167",
-      "mass": "75",
-      "hair_color": "n/a",
-      "skin_color": "gold",
-      "eye_color": "yellow",
-      "birth_year": "112BBY",
-      "gender": "n/a"
-    },
-    {
-      "id": 3,
-      "name": "R2-D2",
-      "height": "96",
-      "mass": "32",
-      "hair_color": "n/a",
-      "skin_color": "white, blue",
-      "eye_color": "red",
-      "birth_year": "33BBY",
-      "gender": "n/a"
-    },
-    {
-      "id": 4,
-      "name": "Darth Vader",
-      "height": "202",
-      "mass": "136",
-      "hair_color": "none",
-      "skin_color": "white",
-      "eye_color": "yellow",
-      "birth_year": "41.9BBY",
-      "gender": "male"
-    },
-    {
-      "id": 5,
-      "name": "Leia Organa",
-      "height": "150",
-      "mass": "49",
-      "hair_color": "brown",
-      "skin_color": "light",
-      "eye_color": "brown",
-      "birth_year": "19BBY",
-      "gender": "female"
-    }
-  ],
-
-  "planets": [
-    {
-      "id": 1,
-      "name": "Alderaan",
-      "rotation_period": "24",
-      "orbital_period": "364",
-      "diameter": "12500",
-      "climate": "temperate"
-    },
-    {
-      "id": 2,
-      "name": "Yavin IV",
-      "rotation_period": "24",
-      "orbital_period": "4818",
-      "diameter": "10200",
-      "climate": "temperate, tropical"
-    },
-    {
-      "id": 3,
-      "name": "Hoth",
-      "rotation_period": "23",
-      "orbital_period": "549",
-      "diameter": "7200",
-      "climate": "frozen"
-    },
-    {
-      "id": 4,
-      "name": "Dagobah",
-      "rotation_period": "23",
-      "orbital_period": "341",
-      "diameter": "8900",
-      "climate": "murky"
-    },
-    {
-      "id": 5,
-      "name": "Bespin",
-      "rotation_period": "12",
-      "orbital_period": "5110",
-      "diameter": "118000",
-      "climate": "temperate"
+      "id": 16,
+      "content": "De nada.",
+      "author": "Jose",
+      "problemId": 4
     }
   ]
 }

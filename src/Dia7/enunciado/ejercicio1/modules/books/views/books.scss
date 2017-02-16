@@ -1,0 +1,74 @@
+$filter-size: 50px;
+
+.books-view {
+    .filter-section {
+        @include absolute($header-size, 0, auto, 0);
+        height: $filter-size;
+        line-height: $filter-size;
+        display: inline;
+        border-bottom: 2px solid silver;
+        .filter {
+            @include absolute(0, auto, 0, 15px);
+            input {
+                margin-left: 5px;
+                width: 250px;
+            }
+        }
+        .order {
+            @include absolute(0, 15px, 0, auto);
+            select {
+                margin-left: 5px;
+                height: 25px;
+                width: 80px;
+            }
+        }
+    }
+    .content {
+        overflow: auto;
+        top: $header-size + $filter-size;
+
+        .books-collection-view {
+            .books-child-view {
+                position: relative;
+                padding: 15px 0 0 15px;
+                border-bottom: 1px solid silver;
+                height: 60px;
+
+                .title {
+                    font-size: 16px;
+                }
+
+                .language {
+                    font-size: 14px;
+                    padding-left: 5px;
+                    color: gray;
+                }
+
+                .btn-remove {
+                    @include absolute(10px, 10px, 10px, auto);
+                    cursor: pointer;
+                    width: 40px;
+                    border-radius: 10px;
+                    border: 1px solid black;
+                    height: 35px;
+                    background: red;
+                    color: white;
+                    font-size: 20px;
+                    line-height: 35px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .header {
+        .add-button {
+            @include absolute(0, 0, 0, auto);
+            cursor: pointer;
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20pt;
+        }
+    }
+}

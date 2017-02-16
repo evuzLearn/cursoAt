@@ -27,4 +27,7 @@
 
 // Dia 5
 // import 'Dia5/explicacion-films/ejercicio1/main';
-import 'Dia5/explicacion-films-characters/ejercicio1/main';
+// import 'Dia5/explicacion-films-characters/ejercicio1/main';
+
+// Dia 6
+import 'Dia8/enunciado/ejercicio1/main';

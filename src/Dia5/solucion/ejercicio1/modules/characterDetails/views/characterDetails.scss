@@ -1,0 +1,20 @@
+.character-details {
+
+  .content {
+    height: 100%;
+    padding: 20px;
+
+    .detail {
+      padding: 15px;
+
+      div {
+        display: inline-block;
+
+        &:first-child {
+          font-weight: bold;
+          width: 150px;
+        }
+      }
+    }
+  }
+}
