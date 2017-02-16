@@ -12,16 +12,10 @@
     .content-layout {
         @media(orientation: portrait) {
             @include absolute(0, 0, 0, 0);
-            .portrait-hide {
-                display: none;
-            }
         }
 
         @media(orientation: landscape) {
             @include absolute($header-size, 0, 0, 0);
-            .landscape-hide {
-                display: none;
-            }
         }
         .left {
             @media(orientation: portrait) {

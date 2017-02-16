@@ -3,6 +3,10 @@ $problem-size: 120px;
 
 .problem-details-view {
     .content {
+        @media(orientation:landscape) {
+            top: 0;
+        }
+        background: white;
         padding: 25px;
         overflow: auto;
         top: $header-size;
@@ -77,7 +81,7 @@ $problem-size: 120px;
                         color: red;
 
                         &.hide{
-                            color: gray;
+                            display: none;
                         }
                     }
                 }

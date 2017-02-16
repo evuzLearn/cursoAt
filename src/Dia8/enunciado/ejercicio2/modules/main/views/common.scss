@@ -29,3 +29,15 @@ $header-size: 50px;
 .content {
   @include absolute($header-size, 0, 0, 0);
 }
+
+@media(orientation: portrait) {
+    .portrait-hide {
+        display: none;
+    }
+}
+
+@media(orientation: landscape) {
+    .landscape-hide {
+        display: none;
+    }
+}

@@ -1,5 +1,8 @@
 .problems-view {
     .content {
+        @media(orientation:landscape) {
+            top: 0;
+        }
         overflow: auto;
         top: $header-size;
 
@@ -9,6 +12,12 @@
                 padding: 10px 0 0 15px;
                 border-bottom: 2px solid silver;
                 height: 80px;
+
+                @media(orientation:landscape) {
+                    &.selected {
+                        background: lavender;
+                    }
+                }
 
                 p {
                     margin: 0;

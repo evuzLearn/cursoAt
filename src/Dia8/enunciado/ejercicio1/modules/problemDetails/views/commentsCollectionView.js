@@ -11,10 +11,11 @@ const CommentView = Marionette.View.extend({
     triggers: {
         'click .remove-button': 'onRemove'
     },
-    templateContext: () => {
+    templateContext ()  {
+        const user = this.user;
         return {
             isMine(author) {
-                console.log(this);
+                return author == user ? '' : 'hide';
             }
         }
     },

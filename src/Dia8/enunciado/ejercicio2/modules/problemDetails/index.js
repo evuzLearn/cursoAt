@@ -26,12 +26,13 @@ function showProblemDetailsView(problem) {
     })
     problemDetailsView.on({
         onBack() {
-            Broker.channel('problems').request('show')
+            Broker.channel('layout').request('hideRegion', 'right');
         },
         onSolve() {
             problem.set('solved', !problem.get('solved'));
             problemDetailsView.setSolve(problem.get('solved'))
             Broker.channel('CMS').request('saveProblem', problem);
+            Broker.channel('problems').request('render');
         },
         onNewComment(inputValue) {
             if(!inputValue) {
@@ -50,7 +51,7 @@ function showProblemDetailsView(problem) {
         }
     })
 
-    Broker.channel('main').request('showView', problemDetailsView);
+    Broker.channel('layout').request('showChildView','right', problemDetailsView);
 }
 
 function showCommentsView () {
