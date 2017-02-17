@@ -6,7 +6,6 @@ const CommentView = Marionette.View.extend({
     initialize(options) {
         this.user = options.user;
         this.problemAuthor = options.problemAuthor;
-        console.log(options)
     },
     user: null,
     problemAuthor: null,
@@ -15,10 +14,13 @@ const CommentView = Marionette.View.extend({
         'click .remove-button': 'onRemove'
     },
     templateContext ()  {
-        const user = this.user;
+        const {user, problemAuthor} = this;
         return {
             isMine(author) {
                 return author == user ? '' : 'hide';
+            },
+            isOP (author) {
+                return author == problemAuthor ? 'op' : '';
             }
         }
     },
@@ -30,7 +32,6 @@ const CommentCollectionView = Marionette.CollectionView.extend({
     tagName: 'ul',
     initialize(options) {
         this.problemId = options.problemId;
-        console.log(options)
     },
     problemId: null,
     problemAuthor: null,

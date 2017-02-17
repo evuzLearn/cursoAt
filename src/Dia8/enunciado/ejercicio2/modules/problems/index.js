@@ -5,9 +5,12 @@ let layoutView;
 let problemsView
 let problemsCollectionView;
 
+let user;
+
 function show() {
     Broker.channel('CMS').request('getProblems')
         .then((problems) => {
+            user = Broker.channel('CMS').request('getCurrentUser');
             showLayoutView();
             showProblemsView();
             showProblemsCollectionView(problems);
@@ -40,7 +43,8 @@ function showProblemsView() {
 
 function showProblemsCollectionView(problems) {
     problemsCollectionView = new ProblemsCollectionView({
-        collection: problems
+        collection: problems,
+        user
     })
 
     problemsCollectionView.on({

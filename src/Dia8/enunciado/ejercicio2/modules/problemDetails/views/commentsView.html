@@ -1,3 +1,3 @@
-<p class="author"><%= author %>:</p>
+<p class="author <%=isOP(author)%>"><%= author %>:</p>
 <p class="description"><%= content %></p>
 <div class="fa fa-eraser remove-button <%=isMine(author)%>"></div>

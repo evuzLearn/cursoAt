@@ -22,7 +22,7 @@ function showProblemDetailsView(problem) {
     problemDetailsView = new ProblemDetailsView({
         model: problem
     })
-    
+
     problemDetailsView.on({
         onBack() {
             Broker.channel('layout').request('hideRegion', 'right');
@@ -34,7 +34,7 @@ function showProblemDetailsView(problem) {
             Broker.channel('problems').request('render');
         },
         onNewComment(inputValue) {
-            if(!inputValue) {
+            if (!inputValue) {
                 alert('Write a comment!')
             } else {
                 let newComment = {
@@ -42,18 +42,31 @@ function showProblemDetailsView(problem) {
                     content: inputValue,
                     problemId: problem.get('id')
                 }
+
+                // Crear notificación
+                commentsCollectionView.children.each((child) => {
+                    const childAuthor = child.model.get('author');
+
+                    if (childAuthor != user) {
+                        let notify = problem.get('notify') || [];
+                        notify.push(childAuthor);
+                        problem.set('notify', notify);
+                    }
+                })
+
+                Broker.channel('CMS').request('saveProblem', problem);
                 Broker.channel('CMS').request('newComment', newComment);
             }
         },
-        onLogout () {
+        onLogout() {
             Broker.channel('CMS').request('logout');
         }
     })
 
-    Broker.channel('layout').request('showChildView','right', problemDetailsView);
+    Broker.channel('layout').request('showChildView', 'right', problemDetailsView);
 }
 
-function showCommentsView (problem, comments) {
+function showCommentsView(problem, comments) {
     commentsCollectionView = new CommentsCollectionView({
         user,
         problemId: problem.get('id'),

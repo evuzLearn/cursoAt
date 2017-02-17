@@ -23,6 +23,10 @@ $problem-size: 120px;
         .author {
             margin-top: 5px;
             font-size: 13px;
+
+            &.op {
+                color: darkgoldenrod;
+            }
         }
 
         .date {
