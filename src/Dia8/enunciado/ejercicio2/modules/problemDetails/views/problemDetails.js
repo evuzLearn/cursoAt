@@ -12,7 +12,8 @@ const ProblemDetailsView = Marionette.View.extend({
     },
     triggers: {
         'click .back-button': 'onBack',
-        'click .solve': 'onSolve'
+        'click .solve': 'onSolve',
+        'click .btn-logout': 'onLogout'
     },
     events: {
         'click .publish': 'handleNewComment'

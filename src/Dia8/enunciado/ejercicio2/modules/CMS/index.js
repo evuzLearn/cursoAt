@@ -18,6 +18,15 @@ function getCurrentUser () {
     return Users.getCurrentUser();
 }
 
+function logout () {
+    Users.logout();
+    Broker.channel('login').request('show');
+}
+
+function login (user) {
+    Users.login(user);
+}
+
 function newComment (comment) {
     return Comments.newComment(comment);
 }
@@ -36,7 +45,9 @@ const API = {
     saveProblem,
     getCurrentUser,
     newComment,
-    deleteComment
+    deleteComment,
+    login,
+    logout
 };
 
 Broker.channel('CMS').reply(API);

@@ -5,6 +5,9 @@ const ProblemsView = Marionette.View.extend({
     className: 'problems-view',
     regions: {
         content: '.content'
+    },
+    triggers: {
+        'click .btn-logout': 'onLogout'
     }
 })
 

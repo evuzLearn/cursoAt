@@ -17,6 +17,15 @@ $header-size: 50px;
     font-size: 20pt;
   }
 
+  .btn-logout {
+    @include absolute(0, 0, 0, auto);
+    cursor: pointer;
+    width: $header-size;
+    line-height: $header-size;
+    text-align: center;
+    font-size: 20pt;
+  }
+
   .title {
     line-height: $header-size;
     text-align: center;

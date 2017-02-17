@@ -6,7 +6,7 @@ function start() {
     //
     //App initialization goes here
     //
-    Broker.channel('problems').request('show');
+    Broker.channel('login').request('show');
 }
 
 //

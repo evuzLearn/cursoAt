@@ -5,7 +5,7 @@ let layoutView;
 let problemsView
 let problemsCollectionView;
 
-function show () {
+function show() {
     Broker.channel('CMS').request('getProblems')
         .then((problems) => {
             showLayoutView();
@@ -18,8 +18,8 @@ function show () {
 }
 
 
-function render () {
-    problemsCollectionView.render();   
+function render() {
+    problemsCollectionView.render();
 }
 
 function showLayoutView() {
@@ -28,6 +28,12 @@ function showLayoutView() {
 
 function showProblemsView() {
     problemsView = new ProblemsView();
+
+    problemsView.on({
+        onLogout() {
+            Broker.channel('CMS').request('logout');
+        }
+    })
 
     Broker.channel('layout').request('showChildView', 'left', problemsView);
 }

@@ -1,7 +1,19 @@
+let user = null;
+
 function getCurrentUser() {
-    return 'Jose'
+    return user
+}
+
+function login (newUser) {
+    user = newUser;
+}
+
+function logout () {
+    user = null;
 }
 
 export default {
-    getCurrentUser
+    getCurrentUser,
+    login,
+    logout
 }

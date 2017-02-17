@@ -48,6 +48,9 @@ function showProblemDetailsView(problem) {
                     comments.add(newComment);
                 });
             }
+        },
+        onLogout () {
+            Broker.channel('CMS').request('logout');
         }
     })
 

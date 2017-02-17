@@ -7,6 +7,9 @@ const LayoutView = Marionette.View.extend({
         left: '.left',
         right: '.right'
     },
+    triggers: {
+        'click .btn-logout': 'onLogout'
+    },
     ui: {
         left: '.left',
         right: '.right'
@@ -20,9 +23,6 @@ const LayoutView = Marionette.View.extend({
                 this.ui.left.removeClass('portrait-hide');
                 break;
         }
-    },
-    triggers: {
-        'click .add-button': 'onAdd'
     },
     hideRegion(region) {
         switch (region) {

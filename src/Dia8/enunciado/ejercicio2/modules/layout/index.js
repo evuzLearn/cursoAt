@@ -23,9 +23,8 @@ function showLayoutView() {
     layoutView = new LayoutView();
 
     layoutView.on({
-        onAdd() {
-            Broker.channel('bookDetails').request('show');
-            Broker.channel('books').request('selectCurrentBook');
+        onLogout () {
+            Broker.channel('CMS').request('logout');
         }
     })
 
