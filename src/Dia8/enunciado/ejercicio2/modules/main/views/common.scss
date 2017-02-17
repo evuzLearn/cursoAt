@@ -37,6 +37,50 @@ $header-size: 50px;
 
 .content {
   @include absolute($header-size, 0, 0, 0);
+
+  .data-problem {
+    p {
+        margin: 0;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .author {
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+    .date {
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+    .description {
+        margin-top: 15px;
+        font-size: 14px;
+        padding-bottom: 15px; 
+        overflow: auto;
+    }
+
+    .separator {
+        margin: 0 50px;
+        border-bottom: 1px solid silver;
+    }
+
+    .solve {
+        @include absolute(0, 20px, 0, auto);
+        line-height: 80px;
+        font-size: 30px;
+        color: green;
+
+        &.hide{
+            color: gray;
+        }
+    }
+  }
 }
 
 @media(orientation: portrait) {

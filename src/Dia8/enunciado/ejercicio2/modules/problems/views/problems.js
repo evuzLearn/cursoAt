@@ -2,7 +2,7 @@ import Template from './problems.html'
 
 const ProblemsView = Marionette.View.extend({
     template: _.template(Template),
-    className: 'problems-view',
+    className: 'problems-view data-problem',
     regions: {
         content: '.content'
     },

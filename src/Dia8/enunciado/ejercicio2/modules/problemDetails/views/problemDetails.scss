@@ -1,63 +1,24 @@
 $footer-size: 100px;
 $problem-size: 120px;
+$lateral-padding: 25px;
 
 .problem-details-view {
     .content {
+        background: white;
+        padding: $lateral-padding;
+        overflow: auto;
+        top: $header-size;
         @media(orientation:landscape) {
             top: 0;
         }
-        background: white;
-        padding: 25px;
-        overflow: auto;
-        top: $header-size;
-
-        p {
-            margin: 0;
-        }
-
-        .title {
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .author {
-            margin-top: 5px;
-            font-size: 13px;
-
-            &.op {
-                color: darkgoldenrod;
-            }
-        }
-
-        .date {
-            margin-top: 5px;
-            font-size: 13px;
-        }
-
-        .description {
-            margin-top: 15px;
-            font-size: 14px;
-            padding-bottom: 15px; 
-            overflow: auto;
-        }
-
-        .separator {
-            margin: 0 50px;
-            border-bottom: 1px solid silver;
-        }
 
         .solve {
-            @include absolute(0, 20px, 0, auto);
-            line-height: 80px;
-            font-size: 30px;
-            color: green;
-
             &.hide{
                 color: gray;
             }
         }
 
-        .problem {
+        .data-problem {
             height: 160;
         }
 
@@ -65,17 +26,30 @@ $problem-size: 120px;
             @include absolute($header-size + $problem-size, 0, $footer-size, 0);
             overflow: auto;
             .comments-collection-view {
-                padding: 0 10px;
+                padding: 0 $lateral-padding;
                 height: 100%;
+
                 .comment-child-view {
                     position: relative;
+
                     .author {
+                        margin-top: 0px;
+                        margin-bottom: 0px;
                         padding-top: 5px;
+                        font-size: 13px;
+
+                        &.op {
+                            color: darkgoldenrod;
+                        }
                     }
 
                     .description {
+                        overflow: auto;
                         margin-top: 5px;
+                        margin-bottom: 0px;
                         padding-right: 20px;
+                        padding-bottom: 15px; 
+                        font-size: 14px;
                     }
 
                     .remove-button {
@@ -95,7 +69,7 @@ $problem-size: 120px;
         .new-comment {
             @include absolute(auto, 0, 10px, 0);
             height: $footer-size;
-            padding: 25px;
+            padding: $lateral-padding;
             margin-bottom: 5px;
 
             textarea {

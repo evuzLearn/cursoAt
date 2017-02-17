@@ -1,5 +1,16 @@
 let user = null;
 
+// users = {
+//     Manuel: 'user',
+//     Arturo: 'user',
+//     Silvia: 'user',
+//     Francisco: 'user',
+//     Marta: 'user',
+//     Mariano: 'user',
+//     Sonia: 'user',
+//     Jose: 'expert'
+// }
+
 function getCurrentUser() {
     return user
 }

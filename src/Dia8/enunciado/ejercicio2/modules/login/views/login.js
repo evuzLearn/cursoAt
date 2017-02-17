@@ -7,10 +7,17 @@ const LoginView = Marionette.View.extend({
         inputUser: '#inputUser'
     },
     events: {
-        'click #btn-login': 'handleLogin'
+        'click #btn-login': 'handleLogin',
+        'keyup #inputUser': 'handleKeyPress',
+        'keyup #inputPass': 'handleKeyPress',
     },
     handleLogin() {
         this.trigger('onLogin', this.ui.inputUser.val());
+    },
+    handleKeyPress(e) {
+        if(e.keyCode == 13) {
+            this.trigger('onLogin', this.ui.inputUser.val());
+        }
     }
 })
 

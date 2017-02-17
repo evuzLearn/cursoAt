@@ -19,31 +19,7 @@
                     }
                 }
 
-                p {
-                    margin: 0;
-                }
-
-                .title {
-                    font-weight: bold;
-                    font-size: 16px;
-                }
-
-                .author {
-                    margin-top: 5px;
-                    font-size: 13px;
-                }
-
-                .date {
-                    margin-top: 5px;
-                    font-size: 13px;
-                }
-
                 .solve {
-                    @include absolute(0, 20px, 0, auto);
-                    line-height: 80px;
-                    font-size: 30px;
-                    color: green;
-
                     &.hide{
                         display: none;
                     }

@@ -29,9 +29,15 @@ function showProblemDetailsView(problem) {
         },
         onSolve() {
             problem.set('solved', !problem.get('solved'));
-            problemDetailsView.setSolve(problem.get('solved'))
-            Broker.channel('CMS').request('saveProblem', problem);
-            Broker.channel('problems').request('render');
+
+            Broker.channel('CMS').request('saveProblem', problem)
+                .then(() => {
+                    problemDetailsView.setSolve(problem.get('solved'))
+                    Broker.channel('problems').request('render');
+                })
+                .fail((err) => {
+                    console.error(err);
+                });
         },
         onNewComment(inputValue) {
             if (!inputValue) {
@@ -44,18 +50,37 @@ function showProblemDetailsView(problem) {
                 }
 
                 // Crear notificación
+                // Se crea un array con los usuario que han comentado.
+                let notifies = problem.get('notify') || [];
+                let problemAuthor = problem.get('author');
+
+                if (user != problemAuthor) {
+                    insertUserToNotify(problemAuthor);
+                }
+
                 commentsCollectionView.children.each((child) => {
                     const childAuthor = child.model.get('author');
 
                     if (childAuthor != user) {
-                        let notify = problem.get('notify') || [];
-                        notify.push(childAuthor);
-                        problem.set('notify', notify);
+                        insertUserToNotify(childAuthor);
                     }
-                })
+                });
+                problem.set('notify', notifies);
+                // ** Fin **
 
                 Broker.channel('CMS').request('saveProblem', problem);
                 Broker.channel('CMS').request('newComment', newComment);
+
+                function insertUserToNotify(user) {
+                    let isNew = true;
+                    notifies.forEach(notify => {
+                        if (notify == user)
+                            isNew = false;
+                    });
+                    if (isNew) {
+                        notifies.push(user);
+                    }
+                }
             }
         },
         onLogout() {

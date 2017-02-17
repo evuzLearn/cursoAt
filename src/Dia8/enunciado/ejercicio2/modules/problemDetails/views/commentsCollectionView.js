@@ -24,7 +24,7 @@ const CommentView = Marionette.View.extend({
             }
         }
     },
-})
+});
 
 const CommentCollectionView = Marionette.CollectionView.extend({
     childView: CommentView,
@@ -49,6 +49,6 @@ const CommentCollectionView = Marionette.CollectionView.extend({
             this.trigger('onChildRemove', ev);
         }
     }
-})
+});
 
 export default CommentCollectionView;

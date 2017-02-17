@@ -16,7 +16,8 @@ const ProblemDetailsView = Marionette.View.extend({
         'click .btn-logout': 'onLogout'
     },
     events: {
-        'click .publish': 'handleNewComment'
+        'click .publish': 'handleNewComment',
+        'keyup #new-comment': 'handleKeyPress',
     },
     templateContext: {
         formatDate: (date) => {
@@ -33,6 +34,11 @@ const ProblemDetailsView = Marionette.View.extend({
     handleNewComment() {
         this.trigger('onNewComment', this.ui.inputNewComment.val());
         this.ui.inputNewComment.val('');
+    },
+    handleKeyPress(e) {
+        if (e.keyCode == 13) {
+            this.handleNewComment();
+        }
     }
 })
 

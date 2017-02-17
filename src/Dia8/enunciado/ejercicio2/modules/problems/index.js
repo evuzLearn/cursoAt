@@ -20,7 +20,6 @@ function show() {
         })
 }
 
-
 function render() {
     problemsCollectionView.render();
 }
@@ -49,6 +48,20 @@ function showProblemsCollectionView(problems) {
 
     problemsCollectionView.on({
         onChildClick(problem) {
+            let notifies = problem.get('notify');
+
+            // Eliminar la notificación,
+            if (notifies) {
+                console.log(notifies)
+                notifies.forEach((notify, index) => {
+                    if (notify == user) {
+                        notifies.splice(index, 1);
+                    }
+                })
+                Broker.channel('CMS').request('saveProblem', problem);
+                problemsCollectionView.render();
+            }
+
             Broker.channel('problemDetails').request('show', problem);
         }
     })

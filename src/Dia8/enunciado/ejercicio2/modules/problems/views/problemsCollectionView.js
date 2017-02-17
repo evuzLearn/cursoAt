@@ -21,15 +21,15 @@ const ProblemView = Marionette.View.extend({
             isSolved(solved) {
                 return solved ? '' : 'hide';
             },
-            hasNew(notifies) {
-                if (!notifies) return '';
-                notifies.forEach(notify => {
-                    if (notify == user) {
-                        console.log(notify);
-                        return 'new-comment';
-                    }
-                })
-            }
+            // hasNew(notifies) {
+            //     if (!notifies) return '';
+            //     notifies.forEach(notify => {
+            //         if (notify == user) {
+            //             console.log(notify);
+            //             return 'fa-fire';
+            //         }
+            //     })
+            // }
         }
     },
     triggers: {
