@@ -1,9 +1,11 @@
+const url = 'http://localhost:3030';
+
 const Problem = Backbone.Model.extend({
 
 })
 
 const Problems = Backbone.Collection.extend({
-    url: 'http://localhost:3030/problems',
+    url: url + '/problems',
     model: Problem
 })
 

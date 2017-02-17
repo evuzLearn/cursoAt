@@ -2,7 +2,7 @@ import Template from './login.html';
 
 const LoginView = Marionette.View.extend({
     template: _.template(Template),
-    className: 'loginView',
+    className: 'login-view',
     ui: {
         inputUser: '#inputUser'
     },

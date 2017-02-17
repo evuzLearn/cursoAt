@@ -1,0 +1,25 @@
+.login-view {
+    .content {
+        .login-form {
+            width: 40%;
+            margin: 50px auto;
+            position: relative;
+
+            input {
+                width: 100%;
+                margin: 5px 0 20px 0;
+            }
+
+            label {
+                font-size: 13px;
+            }
+
+            button {
+                background: #0275d8;
+                color: white;
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}

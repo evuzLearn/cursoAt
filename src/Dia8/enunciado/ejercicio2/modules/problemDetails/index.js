@@ -5,15 +5,13 @@ let problemDetailsView;
 let commentsCollectionView;
 
 let user;
-let comments;
 
 function show(problem) {
     Broker.channel('CMS').request('getComments', problem.get('id'))
-        .then((newComments) => {
-            comments = newComments;
+        .then((comments) => {
             user = Broker.channel('CMS').request('getCurrentUser');
             showProblemDetailsView(problem);
-            showCommentsView(comments);
+            showCommentsView(problem, comments);
         })
         .fail(err => {
             console.error(err);
@@ -24,6 +22,7 @@ function showProblemDetailsView(problem) {
     problemDetailsView = new ProblemDetailsView({
         model: problem
     })
+    
     problemDetailsView.on({
         onBack() {
             Broker.channel('layout').request('hideRegion', 'right');
@@ -43,10 +42,7 @@ function showProblemDetailsView(problem) {
                     content: inputValue,
                     problemId: problem.get('id')
                 }
-                Broker.channel('CMS').request('newComment', newComment)
-                .then((newComment) => {
-                    comments.add(newComment);
-                });
+                Broker.channel('CMS').request('newComment', newComment);
             }
         },
         onLogout () {
@@ -57,10 +53,11 @@ function showProblemDetailsView(problem) {
     Broker.channel('layout').request('showChildView','right', problemDetailsView);
 }
 
-function showCommentsView () {
-    // CollectionView...childViewOptions(model,index)
+function showCommentsView (problem, comments) {
     commentsCollectionView = new CommentsCollectionView({
         user,
+        problemId: problem.get('id'),
+        problemAuthor: problem.get('author'),
         collection: comments
     });
 

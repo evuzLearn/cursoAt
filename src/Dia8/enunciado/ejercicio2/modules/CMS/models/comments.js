@@ -1,9 +1,11 @@
+const url = 'http://localhost:3030';
+
 const Comment = Backbone.Model.extend({
-    urlRoot: 'http://localhost:3030/comments'
+    urlRoot: url + '/comments'
 })
 
 const Comments = Backbone.Collection.extend({
-    url: 'http://localhost:3030/comments',
+    url: url + '/comments',
     model: Comment
 })
 
@@ -12,19 +14,13 @@ let comments;
 function getComments(problemId) {
     let deferred = $.Deferred();
     if (comments) {
-        const commentsFiltered = new Comments(
-            filterComments(problemId)
-        );
-        deferred.resolve(commentsFiltered);
+        deferred.resolve(comments);
     } else {
         let tempComments = new Comments();
         tempComments.fetch()
             .then(() => {
                 comments = tempComments;
-                const commentsFiltered = new Comments(
-                    filterComments(problemId)
-                );
-                deferred.resolve(commentsFiltered);
+                deferred.resolve(comments);
             })
             .fail((err) => {
                 deferred.reject(err);
@@ -32,12 +28,6 @@ function getComments(problemId) {
     }
 
     return deferred.promise()
-}
-
-function filterComments(problemId) {
-    return comments.filter(comment => {
-        return comment.get('problemId') == problemId;
-    })
 }
 
 function newComment(comment) {

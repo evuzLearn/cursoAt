@@ -42,9 +42,7 @@ const ProblemsCollectionView = Marionette.CollectionView.extend({
         })
     },
     onRender() {
-        console.log('render')
         if(this.selectedId) {
-            console.log('se')
             this.selectProblem();
         }
     }

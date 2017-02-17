@@ -10,8 +10,12 @@ function showLoginView() {
     loginView = new LoginView();
 
     loginView.on('onLogin', (inputValue) => {
-        Broker.channel('CMS').request('login', inputValue);
-        Broker.channel('problems').request('show');
+        if (!inputValue) {
+            alert('Introduce a user');
+        } else {
+            Broker.channel('CMS').request('login', inputValue);
+            Broker.channel('problems').request('show');
+        }
     })
 
     Broker.channel('main').request('showView', loginView);
